@@ -59,6 +59,7 @@ __DATA__
                 padding: 5px; /* Поля в ячейках */ 
             }
         </style>
+        <meta charset="utf-8" />
     </head>
     <body><%= content %></body>
 </html>
