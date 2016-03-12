@@ -1,0 +1,5 @@
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+MOJO_MODE=production
+
+0 * * * * /usr/local/bin/perlbrew-cron --with perl-5.20.3@local /home/ichesnokov/stachka-talk-rating/myapp.pl get / | tail -n +3 > /var/sites/ichesnokov.ru/stachka-talk-rating.html
