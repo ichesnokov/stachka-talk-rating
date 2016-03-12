@@ -8,7 +8,7 @@ get '/' => sub {
     my $c = shift;
 
     my @talks = sort {
-            $b->{votes} <=> $a->{votes}
+        $b->{votes} <=> $a->{votes}
     } sort {
         $a->{speaker} cmp $b->{speaker}
     } TalkRating->parse_talks;
