@@ -18,7 +18,8 @@ sub parse_talks {
     my @talks;
     $response->dom->at('.lectures__items')->find('.lectures__item')->each(
         sub {
-            my ($speaker, $title, $votes) =  (
+            my ($id, $speaker, $title, $votes) =  (
+                (map { /(\d+)/ } $_->attr('id')),
                 $_->at('.lectures__item-name b')->text,
                 $_->at('.lectures__item-about h4')->text,
                 $_->find('.lecture_voting_count')->last->text,
@@ -27,7 +28,8 @@ sub parse_talks {
                 {
                     speaker => $speaker,
                     title   => $title,
-                    votes   => $votes
+                    votes   => $votes,
+                    id      => $id,
                 };
         }
     );

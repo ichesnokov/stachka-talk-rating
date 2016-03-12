@@ -34,7 +34,7 @@ __DATA__
     <tr>
         <td><%= $i + 1 %></td>
         <td><%= $talk->{speaker} %></td>
-        <td><%= $talk->{title} %></td>
+        <td><a target="blank" href="http://nastachku.ru/user_lectures?lecture_id=<%= $talk->{id} %>"><%= $talk->{title} %></a></td>
         <td><%= $talk->{votes} %></td>
     </tr>
 % }
